@@ -36,7 +36,7 @@ Next install our pre-commit hooks
 >pre-commit install
 
 With pre-commit hooks and the dev dependencies installed, you should be all set to write and test the code.  To run the pre-commit hooks without running an actual commit you can run
-`pre-commit` otherwise they will just be run when you attempt to commit or push your code to the repo.
+`pre-commit run --all-files` otherwise they will just be run when you attempt to commit or push your code to the repo.
 
 # Running the API
 To run the api simply run
