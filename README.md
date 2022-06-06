@@ -23,7 +23,7 @@ Next, edit the `.env` file to use unique and complex passwords that meet your ow
 
 If you plan on using actual AWS S3, please set up a bucket and enter the corresponding info for the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_STORAGE_BUCKET_NAME`.  Please note the default region is set to use `us-east-1` if you need to change this it can be found in the `docker-compose.yml`.
 
-If you plan on using LocalStack to mock S3, please add a line to your hostsfile to map `127.0.0.1` to `localstack` as localstack is a jerk and won't resolve otherwise as far as I can tell.  Please note that LocalStack S3 does not persist between ups and downs.
+If you plan on using LocalStack to mock S3, please add a line to your hostsfile to map `127.0.0.1` to `localstack` as localstack is a jerk and won't resolve otherwise as far as I can tell.
 
 ## Development Specific Setup (Optional)
 I use a few development specific locally installed python packages to keep code formatted in a generic way and to alert me of any potential issues. If you'd like to contribute to this code base please follow these instructions for setup, so our code will match.
