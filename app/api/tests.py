@@ -150,3 +150,12 @@ class KeysTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         post_count = Key.objects.all().count()
         self.assertEqual(prev_count, post_count)
+
+
+class DogTests(APITestCase):
+    def test_dog_output_empty(self):
+        url = reverse("dog_output")
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    # I need to research how to do mocks for Celery tasks to expand the testing of Dogs any further

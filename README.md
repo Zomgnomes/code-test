@@ -59,4 +59,9 @@ For the keys there are two main routes:
      - POST - Creates a new key of the given name with a counter of 0 and return its data if one does not already exist and the length of the name is 100 characters or fewer.  Otherwise, a status of 400 bad request is returned.
      - PUT - Will increment the key and return its data or a 404 not found status if no key is found.
      - DELETE - Will delete the key with the corresponding name and return with a 204 no content status, or return a 404 not found status if no key is found.
-
+## The Dogs Routes
+For the dogs there are two main routes:
+ - `http://localhost:8000/dogs/load`
+   - which accepts a GET request and populates the system with 24 images of dogs from the dogs.ceo API along with their metadata and returns a status of 201 created
+ - `http://localhost:8000/dogs/`
+   - which accepts a GET request and returns a random image of a dog, a modified image of that dog, and any metadata from the original image if dogs have been loaded into the system, or a 404 not found if no dogs are in the system

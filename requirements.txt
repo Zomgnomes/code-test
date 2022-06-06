@@ -1,9 +1,12 @@
 Django~=4.0
 djangorestframework~=3.13
+# This seems to be the only way to get this to run on an M1 Mac
 psycopg2-binary~=2.9
 celery~=5.2
 redis~=4.3
-Pillow~=9.1
+# Pillow does a worse job with exif if you use any newer version
+Pillow==7.0.0
 boto3~=1.24
 django-storages~=1.12
 awscli~=1.25
+requests~=2.27

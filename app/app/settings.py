@@ -131,6 +131,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Celery config
 CELERY_BROKER_URL = "redis://redis:6379"
 CELERY_RESULT_BACKEND = "redis://redis:6379"
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TIMEZONE = "US/Eastern"
+
 
 # LocalStack info
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
