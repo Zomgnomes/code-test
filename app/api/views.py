@@ -4,6 +4,7 @@ from rest_framework.response import Response
 
 from .models import Key
 from .serializers import KeySerializer
+from .services import get_dogs
 
 
 @api_view(["GET"])
@@ -43,8 +44,7 @@ def key_specific(request, name, format=None):
         return Response(serializer.data)
     elif request.method == "PUT":
         # Increment the key if it exists
-        key.counter = key.counter + 1
-        key.save()
+        key.increment()
         serializer = KeySerializer(key)
         return Response(serializer.data)
         pass
@@ -52,3 +52,13 @@ def key_specific(request, name, format=None):
     elif request.method == "DELETE":
         key.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(["GET"])
+# Load a dozen dog images into the system
+def dog_load(request, format=None):
+    try:
+        service_result = get_dogs()
+        return Response(service_result)
+    except Exception:
+        return Response(status=status.HTTP_400_BAD_REQUEST)

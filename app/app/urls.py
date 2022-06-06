@@ -22,6 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("keys/", views.key_list, name="key_list"),
     path("keys/<str:name>", views.key_specific, name="key_specific"),
+    path("dogs/load", views.dog_load, name="dog_load"),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
